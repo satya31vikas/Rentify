@@ -15,7 +15,7 @@ connectDB();
 
 app.use(cors(
     {
-        origin: ['https://rent-satyavikas.vercel.app','http://localhost:5173'],
+        origin: ['https://rentify-satyavikas.vercel.app','http://localhost:5173'],
         allowedHeaders: ['Content-Type', 'Authorization'],
         methods: ['GET', 'HEAD', 'PATCH', 'POST', 'PUT', 'DELETE'],
         credentials: true
