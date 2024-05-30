@@ -22,7 +22,7 @@ export const loginFunc = async (data) => {
 
 export const signupFunc = async (data) => {
     try {
-        const response = await fetch('/api/users/signup', {
+        const response = await fetch('https://rentify-server-satyavikas.vercel.app/api/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
