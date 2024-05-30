@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
       proxy: {
         '/api': {
-          target: 'http://localhost:5000',
+          target: 'https://rentify-server-satyavikas.vercel.app',
           changeOrigin: true,  // needed for virtual hosted sites
           secure: false,       // if you want to accept self-signed certificates
         }
