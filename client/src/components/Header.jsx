@@ -73,7 +73,7 @@ const Header = () => {
                             <div className='flex flex-col gap-4 items-start'>
                                 
                                 <div className='flex flex-col gap-0 items-start'>
-                                    <span className=' text-3xl sm:text-4xl font-[610] text-green-700 mb-2 text-left'>{user?.firstName} {user?.lastName}</span>
+                                    <span className=' text-3xl sm:text-4xl font-[610] text-blue-700 mb-2 text-left'>{user?.firstName} {user?.lastName}</span>
                                     <span className='text-[15px] flex items-center gap-2'>
                                         <span className='italic'>Email:</span> 
                                         <span >{user?.email}</span>
