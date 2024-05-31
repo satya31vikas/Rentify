@@ -88,7 +88,7 @@ const Find = () => {
 
     return (
         <div className='flex flex-col items-center justify-center'>
-            <ConfigProvider theme={{token:{colorPrimary:'#00a200', colorBorder:'#00a200', colorTextPlaceholder:'#00a200'}}}>
+            <ConfigProvider theme={{token:{colorPrimary:'#009EFF', colorBorder:'#009EFF', colorTextPlaceholder:'#009EFF'}}}>
                 <div className='flex flex-wrap items-center justify-center gap-1'>
                     <Select
                         defaultValue={null}
