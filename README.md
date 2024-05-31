@@ -26,12 +26,12 @@
 
 
 ## Deployment
-### This app is deployed on: [https://rentify-harshpx.vercel.app/](https://rentify-harshpx.vercel.app/)
+### This app is deployed on: [https://rentify-satyavikas.vercel.app/](https://rentify-satyavikas.vercel.app/)
 
 ## To run locally
 1. Clone Project:
     ```
-    git clone https://github.com/harshpx/Rentify.git
+    git clone https://github.com/satya31vikas/Rentify.git
     cd Rentify
     ```
 2. Client setup:
@@ -55,7 +55,7 @@
             plugins: [react()],
         })
         ```
-3. Server setup (Not necessary as server is already deployed on [link](https://rentify-server-harshpx.vercel.app), do only for learning purposes):
+3. Server setup (Not necessary as server is already deployed on [link](https://rentify-server-satyavikas.vercel.app), do only for learning purposes):
     * Go to server directory and install required libraries.
     * Create `.env` file similar to `.env_sample` present in directory 
     * Setup MongoDB Atlas and cloudinary to get following environment variables:
