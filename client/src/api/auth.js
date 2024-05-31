@@ -1,7 +1,7 @@
 
 export const loginFunc = async (data) => {
     try {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('https://rentify-server-satyavikas.vercel.app/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const signupFunc = async (data) => {
 
 export const uploadFunc = async (formData,user) => {
     try {
-        const response = await fetch('/api/users/upload', {
+        const response = await fetch('https://rentify-server-satyavikas.vercel.app/api/users/upload', {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${user.token}`
