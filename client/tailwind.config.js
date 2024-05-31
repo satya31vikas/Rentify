@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        'primary': '#00a200',
+        'primary': '#009EFF',
       },
       aspectRatio: {
         '3/4': '3 / 4',
