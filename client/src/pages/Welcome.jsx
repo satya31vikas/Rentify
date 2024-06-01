@@ -27,7 +27,7 @@ const Welcome = () => {
                 <h1 className=' text-5xl sm:text-7xl font-[650] text-center'>
                     <span className='text-white'>Welcome to</span>
                     <br/>
-                    <span className='font-[1000] text-7xl sm:text-9xl text-green-500'>Rentify</span>
+                    <span className='font-[1000] text-7xl sm:text-9xl text-blue-500'>Rentify</span>
                 </h1>
                 <div onClick={()=>navigate('/dashboard')} className='flex items-center gap-2 hover:underline hover:scale-110 duration-150 cursor-pointer text-neutral-800'>
                     <span className='text-xl'>Find your home now</span>
