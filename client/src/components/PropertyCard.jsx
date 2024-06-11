@@ -73,6 +73,7 @@ const PropertyCard = ({property}) => {
             message.success('Quote sent to your mail successfully!');
             message.success('Quote request sent to seller successfully!');
         }, (error) => {
+            console.error('EmailJS error:', error);
             message.error('Error sending quote to your mail');
             message.error('Error sending quote request to seller');
         }).finally(() => {
