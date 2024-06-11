@@ -22,35 +22,63 @@ const PropertyCard = ({property}) => {
         }
     },[user])
 
-    const quoteHandler = ()=>{
+    // const quoteHandler = ()=>{
+    //     setLoading(true);
+    //     const templateParams = {
+    //         to_email: user.email,
+    //         to_name: user.firstName,
+    //         subject: 'Property renting quote request',
+    //         message: `This is in response to the property that you were interested in on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the seller details:\nSeller Email: ${property.sellerEmail}\nSeller Phone: ${property.sellerPhone}\n\nPlease contact the seller for further details.\n`,
+    //     };
+    //     emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), templateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
+    //     .then((result) => {
+    //         message.success('Quote sent to your mail successfully!');
+    //     }, (error) => {
+    //         message.error('Error sending quote to your mail');
+    //     });
+
+    //     const newTemplateParams = {
+    //         to_email: property.sellerEmail,
+    //         to_name: 'Renter',
+    //         subject: 'Your property listing is getting attention!',
+    //         message: `This is in response to the property that you have listed on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the interested user's details:\nUser Email: ${user.email}\nUser Phone: ${user.phoneNumber}\n\nPlease contact the seller for further details.\n`,
+    //     }
+    //     emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), newTemplateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
+    //     .then((result) => {
+    //         message.success('Quote request sent to seller successfully!');
+    //     }, (error) => {
+    //         message.error('Error sending quote request to seller');
+    //     });
+    //     setLoading(false);
+    // }
+
+    const quoteHandler = () => {
         setLoading(true);
+        
         const templateParams = {
-            to_email: user.email,
-            to_name: user.firstName,
-            subject: 'Property renting quote request',
-            message: `This is in response to the property that you were interested in on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the seller details:\nSeller Email: ${property.sellerEmail}\nSeller Phone: ${property.sellerPhone}\n\nPlease contact the seller for further details.\n`,
+            property_location: property.location,
+            property_city: property.city,
+            property_bhk: property.bhk,
+            property_area: property.area,
+            property_price: property.price,
+            property_nearbyFacilities: property.nearbyFacilities.join(', '),
+            property_sellerEmail: property.sellerEmail,
+            property_sellerPhone: property.sellerPhone,
+            user_email: user.email,
+            user_phoneNumber: user.phoneNumber
         };
-        emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), templateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
+    
+        emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_ID), templateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
         .then((result) => {
             message.success('Quote sent to your mail successfully!');
-        }, (error) => {
-            message.error('Error sending quote to your mail');
-        });
-
-        const newTemplateParams = {
-            to_email: property.sellerEmail,
-            to_name: 'Renter',
-            subject: 'Your property listing is getting attention!',
-            message: `This is in response to the property that you have listed on our platform.\n\nProperty Reference:\nLocation: ${property.location}, ${property.city}\nRooms: ${property.bhk}\nArea: ${property.area} Yards\nPrice: INR ${property.price}\nNearby Facilities: ${property.nearbyFacilities.join(', ')}\n\nHere are the interested user's details:\nUser Email: ${user.email}\nUser Phone: ${user.phoneNumber}\n\nPlease contact the seller for further details.\n`,
-        }
-        emailjs.send(String(import.meta.env.VITE_EMAILJS_SERVICE_NAME), String(import.meta.env.VITE_EMAILJS_TEMPLATE_NAME), newTemplateParams, String(import.meta.env.VITE_EMAILJS_PUBLIC_KEY))
-        .then((result) => {
             message.success('Quote request sent to seller successfully!');
         }, (error) => {
+            message.error('Error sending quote to your mail');
             message.error('Error sending quote request to seller');
+        }).finally(() => {
+            setLoading(false);
         });
-        setLoading(false);
-    }
+    }    
 
     const handleLike = async ()=>{
         try {
